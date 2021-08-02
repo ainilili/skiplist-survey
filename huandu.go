@@ -80,5 +80,4 @@ func huanduWorstDelete(n int) {
 	}
 }
 
-var huanduFunctions = []func(int){huanduInserts, huanduWorstInserts,
-	huanduAvgSearch, huanduSearchEnd, huanduDelete, huanduWorstDelete}
+

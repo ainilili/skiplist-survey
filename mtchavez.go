@@ -80,5 +80,4 @@ func mtchavezWorstDelete(n int) {
 	}
 }
 
-var mtchavezFunctions = []func(int){mtchavezInserts, mtchavezWorstInserts,
-	mtchavezAvgSearch, mtchavezSearchEnd, mtchavezDelete, mtchavezWorstDelete}
+

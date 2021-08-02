@@ -50,11 +50,27 @@ func main() {
 	// first, print the CSV header with iteration counts
 	runIterations("iterations", start, end, step, iterations)
 
+	var zhenjlFunctions = []func(int){zhenjlInserts, zhenjlWorstInserts,
+		zhenjlAvgSearch, zhenjlSearchEnd, zhenjlDelete, zhenjlWorstDelete}
+	var seanFunctions = []func(int){seanInserts, seanWorstInserts,
+		seanAvgSearch, seanSearchEnd, seanDelete, seanWorstDelete}
+	var ryszardFunctions = []func(int){ryszardInserts, ryszardWorstInserts,
+		ryszardAvgSearch, ryszardSearchEnd, ryszardDelete, ryszardWorstDelete}
+	var nFunctions = []func(int){nInserts, nWorstInserts,
+		nAvgSearch, nSearchEnd, nDelete, nWorstDelete}
+	var mtchavezFunctions = []func(int){mtchavezInserts, mtchavezWorstInserts,
+		mtchavezAvgSearch, mtchavezSearchEnd, mtchavezDelete, mtchavezWorstDelete}
+	var huanduFunctions = []func(int){huanduInserts, huanduWorstInserts,
+		huanduAvgSearch, huanduSearchEnd, huanduDelete, huanduWorstDelete}
+	var colFunctions = []func(int){colInserts, colWorstInserts,
+		colAvgSearch, colSearchEnd, colDelete, colWorstDelete}
+
 	allFunctions := append(seanFunctions, zhenjlFunctions...)
 	allFunctions = append(allFunctions, mtchavezFunctions...)
 	allFunctions = append(allFunctions, huanduFunctions...)
 	allFunctions = append(allFunctions, colFunctions...)
 	allFunctions = append(allFunctions, ryszardFunctions...)
+	allFunctions = append(allFunctions, nFunctions...)
 
 	for _, f := range allFunctions {
 		runIterations(funcName(f), start, end, step, f)

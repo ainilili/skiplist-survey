@@ -99,5 +99,4 @@ func colWorstDelete(n int) {
 	}
 }
 
-var colFunctions = []func(int){colInserts, colWorstInserts,
-	colAvgSearch, colSearchEnd, colDelete, colWorstDelete}
+

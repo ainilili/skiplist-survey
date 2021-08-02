@@ -3,11 +3,11 @@ package main
 import (
 	"time"
 
-	seaSkiplist "github.com/sean-public/fast-skiplist"
+	nskiplist "github.com/awesome-cap/skiplist"
 )
 
-func seanInserts(n int) {
-	list := seaSkiplist.New()
+func nInserts(n int) {
+	list := nskiplist.New(12)
 	defer timeTrack(time.Now(), n)
 
 	for i := 0; i < n; i++ {
@@ -15,8 +15,8 @@ func seanInserts(n int) {
 	}
 }
 
-func seanWorstInserts(n int) {
-	list := seaSkiplist.New()
+func nWorstInserts(n int) {
+	list := nskiplist.New(12)
 	defer timeTrack(time.Now(), n)
 
 	for i := 0; i < n; i++ {
@@ -24,8 +24,8 @@ func seanWorstInserts(n int) {
 	}
 }
 
-func seanAvgSearch(n int) {
-	list := seaSkiplist.New()
+func nAvgSearch(n int) {
+	list := nskiplist.New(12)
 
 	for i := 0; i < n; i++ {
 		list.Set(float64(n-i), testByteString)
@@ -34,12 +34,12 @@ func seanAvgSearch(n int) {
 	defer timeTrack(time.Now(), n)
 
 	for i := 0; i < n; i++ {
-		_ = list.Get(float64(i))
+		_,_ = list.Get(float64(i))
 	}
 }
 
-func seanSearchEnd(n int) {
-	list := seaSkiplist.New()
+func nSearchEnd(n int) {
+	list := nskiplist.New(12)
 
 	for i := 0; i < n; i++ {
 		list.Set(float64(n-i), testByteString)
@@ -48,12 +48,12 @@ func seanSearchEnd(n int) {
 	defer timeTrack(time.Now(), n)
 
 	for i := 0; i < n; i++ {
-		_ = list.Get(float64(n))
+		_,_ = list.Get(float64(n))
 	}
 }
 
-func seanDelete(n int) {
-	list := seaSkiplist.New()
+func nDelete(n int) {
+	list := nskiplist.New(12)
 
 	for i := 0; i < n; i++ {
 		list.Set(float64(n-i), testByteString)
@@ -62,12 +62,12 @@ func seanDelete(n int) {
 	defer timeTrack(time.Now(), n)
 
 	for i := 0; i < n; i++ {
-		_ = list.Remove(float64(i))
+		_ = list.Del(float64(i))
 	}
 }
 
-func seanWorstDelete(n int) {
-	list := seaSkiplist.New()
+func nWorstDelete(n int) {
+	list := nskiplist.New(12)
 
 	for i := 0; i < n; i++ {
 		list.Set(float64(n-i), testByteString)
@@ -76,8 +76,7 @@ func seanWorstDelete(n int) {
 	defer timeTrack(time.Now(), n)
 
 	for i := 0; i < n; i++ {
-		_ = list.Remove(float64(n - i))
+		_ = list.Del(float64(n - i))
 	}
 }
-
 

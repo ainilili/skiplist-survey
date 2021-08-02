@@ -80,5 +80,4 @@ func zhenjlWorstDelete(n int) {
 	}
 }
 
-var zhenjlFunctions = []func(int){zhenjlInserts, zhenjlWorstInserts,
-	zhenjlAvgSearch, zhenjlSearchEnd, zhenjlDelete, zhenjlWorstDelete}
+

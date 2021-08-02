@@ -80,5 +80,4 @@ func ryszardWorstDelete(n int) {
 	}
 }
 
-var ryszardFunctions = []func(int){ryszardInserts, ryszardWorstInserts,
-	ryszardAvgSearch, ryszardSearchEnd, ryszardDelete, ryszardWorstDelete}
+
